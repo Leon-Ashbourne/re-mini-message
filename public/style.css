@@ -1,0 +1,19 @@
+body {
+    background: red;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 auto 50px;
+}
+
+.messages {
+    margin: 0 auto;
+    display: grid;
+    max-width: 80vw;
+    gap: 5px;
+}
+.messages li {
+    list-style-type: none;
+    background-color: yellow;
+}
