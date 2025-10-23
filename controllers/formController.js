@@ -6,9 +6,12 @@ function formController(req, res) {
 
 function fromPostController(req, res) {
 
-    const text = req.body.text;
-    const user = req.body.user;
+    let text = req.body.text;
+    let user = req.body.user;
     const added = new Date();
+
+    text = text === '' ? 'unknown' : text;
+    user = user === '' ? 'unknown' : user;    
 
     addMessageToDb({text, user, added});
 

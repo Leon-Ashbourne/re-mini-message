@@ -22,7 +22,32 @@ h1 {
     margin-top: 20px;
 }
 
-.add-new-message {
+.add-new-message, button {
     padding: 8px 16px;
     font-size: 1.3rem;
 }
+
+.form-container {
+    margin: 20vh auto 0;
+}
+
+.form-container form {
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-container form label {
+    font-size: 1.5rem;
+}
+
+input {
+    height: 1.6rem;
+}
+
+.message-submit {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+
+
