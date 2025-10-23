@@ -5,6 +5,8 @@ const formRouter = require("./routes/formRouter");
 
 const app = express();
 
+app.use(express.urlencoded({extended: true}));
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -23,8 +25,7 @@ app.listen(PORT, (error) => {
     console.log(`Connection successful and listening at: ${PORT}`);
 })
 
-
-app.get((error, req, res, next) => {
+app.use((error, req, res, next) => {
     if(error) throw error;
 })
 
