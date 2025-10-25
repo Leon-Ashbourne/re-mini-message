@@ -1,7 +1,7 @@
-const { getAllMessages, getMessageByName, addMessageToDb } = require("../models/db");
+const db = require("../models/query");
 
 async function homeController(req, res) {
-    const messages = await getAllMessages();
+    const messages = await db.getMessages();
 
     res.render("../views/home", {messages});
 }
