@@ -13,7 +13,6 @@ const date = currentDate.getDate() + "/"
             // + currentDate.getHours() + ":" 
             // + currentDate.getMinutes();
 
-
 const SQL = `
     CREATE TABLE IF NOT EXISTS user_messages (
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -21,18 +20,17 @@ const SQL = `
         text TEXT,
         add VARCHAR(255)
     );
-
+ 
     INSERT INTO user_messages (username, text, add)
-    VALUES ("Amon", "this is one message", ${date}),
-    ("Charlie", "this is one of a kind", ${date});
+    VALUES ('Amon', 'this is one message', ${date}),
+    ('Charlie', 'this is one of a kind', ${date});
 
 `
 
 async function main() {
     console.log("populating....");
     const client = new Client({
-        connectionString: "postgresql://the-saint:leon@localhost:5432/messages",
-        // connectionString: `postgresql://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@localhost:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}`,
+        connectionString: `postgresql://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@localhost:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}`,
     })
 
     await client.connect();
@@ -41,7 +39,6 @@ async function main() {
 
     console.log("done...");
 }
-
 
 main();
 

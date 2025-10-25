@@ -7,13 +7,13 @@ function formController(req, res) {
 function fromPostController(req, res) {
 
     let text = req.body.text;
-    let user = req.body.user;
+    let username = req.body.username;
     const add = new Date();
 
     text = text === '' ? 'unknown' : text;
-    user = user === '' ? 'unknown' : user;    
+    username = username === '' ? 'unknown' : username;    
 
-    db.addMessage({ text, user, add});
+    db.addMessage({ text, username, add});
 
     res.redirect("/");
 }
