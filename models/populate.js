@@ -30,7 +30,7 @@ const SQL = `
 async function main() {
     console.log("populating....");
     const dbUrl = process.argv[2];
-    
+    if(dbUrl.includes(process.env.PRODUCTION_DB_URL)) process.env.NODE_ENV = "production";
     const client = new Client({
         connectionString: `${dbUrl}`,
     })
